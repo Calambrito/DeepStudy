@@ -32,7 +32,7 @@ Suggestions:
 
 Distribute the material covered in the week throughout 5 days adding upto no more than 3 hours of studying a day. 
 In the Suggestions add crucial insights that people commonly face when using that topic.
-If you notice a quiz for a subject, make sure to add prep for that early on in the week.
+If you notice a quiz or midterm for a subject, make sure to add prep for that early on in the week.
 
 """
 
@@ -50,7 +50,7 @@ def RAG(query: str, model: OllamaLLM):
 
     print(prompt + "\n\n")
     response_text = model.invoke(prompt)
-   # print("\n\n=== FINAL RESPONSE ===")
-   # print(response_text)
+    print("\n\n=== FINAL RESPONSE ===")
+    print(response_text)
     
-    return response_text
+    return response_text 
