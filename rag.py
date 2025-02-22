@@ -1,4 +1,3 @@
-import re
 from langchain_chroma import Chroma
 from langchain.prompts import ChatPromptTemplate
 from langchain_ollama import OllamaLLM
@@ -7,13 +6,35 @@ from langchain_ollama import OllamaEmbeddings
 CHROMA_PATH = "chroma"
 
 PROMPT_TEMPLATE = """
-Answer the question below, use the given context if necessary:
+Given Below is what courses I have for the mentioned weeks.
 
 {context}
 
 ---
 
-Answer the question, rely on the context given above if needed and do not refer to the context in your response. The user providing the question is not privy to the context: {question}
+{question}
+
+Generate plans following the given template.
+
+Day 1:
+X hours: [Topic Name]
+Suggestions:
+Y hours: [Topic Name]
+Suggestions:
+... and so on
+
+Day 2:
+X hours: [Topic Name]
+Suggestions:
+Y hours: [Topic Name]
+Suggestions:
+... and so on
+
+Assume the user has 3 hours of free time everyday. 
+In the Suggestions add crucial insights that people commonly face when using that topic.
+Make sure to have some work for atleast 5 days a week.
+If you notice a quiz for a subject, make sure to add prep for that early on in the week.
+
 """
 
 def get_embedding_function():
@@ -30,8 +51,7 @@ def RAG(query: str, model: OllamaLLM):
 
     print(prompt + "\n\n")
     response_text = model.invoke(prompt)
-
-    print("\n\n=== FINAL RESPONSE ===")
-    print(response_text)
+   # print("\n\n=== FINAL RESPONSE ===")
+   # print(response_text)
     
     return response_text

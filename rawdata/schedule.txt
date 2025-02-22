@@ -1,0 +1,171 @@
+@
+Week 1:
+CSE115$[Introduction and Number Systems], [Number Systems (Continues)]
+CSE173$[introduction to Propositional Logic: Propositions],[ILogical Connectives, Truth Tables]
+CSE231$[Introduction to Logic Design], [Number Systems in Digital Systems]
+CSE215$[Introduction to Computers, Programs, and Java], [Elementary Programming]
+CSE225$[Introduction to Data structure and classes],[ADT Unsorted List (Array based)]
+CSE325$[Background of programming languages and paradigms],[]
+CSE331$[Fundamental concepts of Microprocessor],[]
+CSE332$[introduction to the basic concepts of computers],[]
+CSE373$[Introduction],[Getting Started]
+@
+
+@
+Week 2:
+CSE115$[Overview of Computers and Programming], [Overview of C]
+CSE173$[Predicate Logic and Quantifiers:Universal and Existential Quantifiers],[Rules of Inference]
+CSE231$[Boolean Logic], [K-Maps]
+CSE215$[Selections], [Loops]
+CSE225$[ADT Unsorted List (Array based)],[ADT Sorted List (Array based)]
+CSE325$[Evolution of Major Programming Languages],[]
+CSE331$[Internal and external architecture of 8086 microprocessor],[]
+CSE332$[define processor specification and instruction set architecture],[]
+CSE373$[Getting Started (Continues)],[Growth of functions]
+@
+
+@
+Week 3:
+CSE115$[Overview of C (Continues)], [Top-Down Design with Functions]
+CSE173$[Proof Techniques: Direct Proof, Proof by Contradiction],[Proof by Contraposition]
+CSE231$[Simplification of Boolean Expressions], [Combinational Circuit Design]
+CSE215$[Methods], [Arrays]
+CSE225$[ADT Unsorted List (Linked List)],[ADT Sorted List (Linked List)]
+CSE325$[Describing Syntax and Semantics],[]
+CSE331$[Memory Organization of 8086 microprocessor],[]
+CSE332$[evaluate the performance of a computing system],[]
+CSE373$[Growth of functions (Continues)],[Divide and Conquer Algorithms]
+@
+
+@
+Week 4:
+CSE115$[Top-Down Design with Functions (Continues)], [Selection Structures]
+CSE173$[Proof Methods Continued: Existence Proof],[Mathematical Argument Verification]
+CSE231$[Adders and Subtractors], [Decoders and Encoders]
+CSE215$[Arrays (Continues)], [Objects and Classes]
+CSE225$[ADT Stack (Array & Linked List)],[ADT Queue (Array & Linked List)]
+CSE325$[Names, Bindings, and Scopes],[]
+CSE331$[Brief Architecture of RAM and Peripheral Devices],[]
+CSE332$[analyze instruction set architecture],[]
+CSE373$[Divide and Conquer Algorithms (Continues)],[Divide and Conquer Algorithms(Continues)]
+@
+
+
+@
+Week 5:
+CSE115$[Selection Structures (Continues)], [Repetition and Loop Statements]
+CSE173$[Quiz 1 + Set Theory: Types of Sets],[Operations, Properties]
+CSE231$[Multiplexers], [Flip-Flops]
+CSE215$[Object Oriented Thinking], [OOP Concepts (contd.)]
+CSE225$[Programming with Recursion],[Binary Search Tree]
+CSE325$[Datatypes],[]
+CSE331$[Programming Languages for Interfacing],[]
+CSE332$[computer organization: roles of processors, main memory],[]
+CSE373$[Sorting],[Sorting (Continues)]
+@
+
+@
+Week 6:
+CSE115$[Repetition and Loop Statements (Continues)], [Repetition and Loop Statements 
+(Continues)]
+CSE173$[Relations and Functions: Types of Relations],[Properties, Composition, Types of Functions]
+CSE231$[Sequential Circuit Design], [Counters]
+CSE215$[Inheritance], [Polymorphism]
+CSE225$[Binary Search Tree(Continued)],[***Midterm Exam****]
+CSE325$[Statement-Level Control Structures],[]
+CSE331$[Pseudo Code],[]
+CSE332$[design Instruction set architecture and subsystems ],[]
+CSE373$[Sorting (Continues)],[Sorting (Continues)]
+@
+
+@
+Week 7:
+CSE115$[Pointers and Modular Programming], [Pointers and Modular Programming 
+(Continues)]
+CSE173$[Graphs and Trees: Basics, Properties],[Graphs and Trees: Basics, Properties]
+CSE231$[Shift Registers], [RAM and ROM]
+CSE215$[Reserve class for reviewing], [Midterm (Ch 1 -11)]
+CSE225$[Binary Search Tree(Continued)],[Heaps]
+CSE325$[Subprograms],[]
+CSE331$[Assembly Languages],[]
+CSE373$[Greedy Algorithms],[Greedy Algorithms (Continues)]
+@
+
+@
+Week 8:
+CSE115$[Mid-term Exam], [Arrays]
+CSE173$[Midterm Exam],[]
+CSE231$[Programmable Logic Devices], [State Machines]
+CSE215$[Abstract Classes], [Interfaces]
+CSE225$[Priority Queue, Huffman Coding],[Graphs]
+CSE325$[Abstract Data Types and Encapsulation Constructs],[]
+CSE331$[Instruction Sets],[]
+CSE332$[Midterm exam ],[]
+CSE373$[Greedy Algorithms],[Mid-term Exam]
+@
+
+@
+Week 9:
+CSE115$[Arrays (Continues)], [Strings]
+CSE173$[Recurrence Relations: Definition],[Solving Using Forward/Backward Substitution]
+CSE231$[Verilog HDL Introduction], [Verilog HDL for Combinational Circuits]
+CSE215$[Use of Abstract class and Interfaces], [Exception Handling]
+CSE225$[Graphs, BFS, DFS],[Graph(Continued)]
+CSE325$[Support for Object-Oriented Programming],[]
+CSE331$[IO controller programming],[]
+CSE373$[Dynamic Programming],[Dynamic Programming (Continues)]
+@
+
+@
+Week 10:
+CSE115$[Strings (Continues)], [Structures and Union Types]
+CSE173$[Number Theory: Congruences],[Modular Arithmetic, GCD, LCM, Euclidean Algorithm]
+CSE231$[Verilog HDL for Sequential Circuits], [Testbenches]
+CSE215$[Exception Handling (Contd.)], [Text I/O and Binary I/O]
+CSE225$[Sorting Algorithms],[Sorting Algorithms]
+CSE325$[Concurrency],[]
+CSE331$[Interrupt],[]
+CSE373$[Dynamic Programming (Continues)],[Dynamic Programming (Continues)]
+@
+@
+Week 11:
+CSE115$[Structures and Union Types (Continues)], [Recursion]
+CSE173$[Quiz 2 + Mathematical Induction: Basics],[Proof of Series, Structural Induction]
+CSE231$[Midterm 1], [Midterm 2]
+CSE215$[Generics], [Multithreading and Parallel Programming]
+CSE225$[Hashing],[Hashing (Continued)]
+CSE325$[Exception and Event Handling],[]
+CSE331$[Data conversion algorithm],[]
+CSE373$[Graph Algorithms],[Graph Algorithms (Continues)]
+@
+
+@
+Week 12:
+CSE115$[Recursion (Continues)], [Review and other materials]
+CSE173$[Summation Notation and Basic Counting Techniques: Permutations],[Combinations, Pigeonhole Principle]
+CSE231$[Review], [Final Exam]
+CSE215$[(Open Topics)], [Reserve class for reviewing]
+CSE225$[Reserved],[Project Presentation+ Viva]
+CSE325$[Functional and Logic Programming Languages],[]
+CSE331$[Brief Introduction to Microcontroller 8051],[]
+CSE373$[Graph Algorithms (Continues)],[Graph Algorithms (Continues)]
+@
+
+@
+Week 13:
+CSE231$[Final Exam]
+CSE173$[Quiz 3 + Advanced Counting Techniques: Inclusion-Exclusion],[Binomial Theorem]
+CSE225$[Midterm Exam],[]
+CSE331$[Memory Organization of Microcontroller 8051],[]
+CSE331$[Assembly in Microcontroller 8051],[]
+CSE373$[Graph Algorithms (Continues)],[Graph Algorithms (Continues)]
+@
+
+@
+Week 14:
+CSE331$[Serial Communication],[]
+CSE173$[Final Exam],[]
+CSE331$[Port Programming in Microcontroller 8051],[]
+CSE373$[String Processing Algorithms],[String Processing Algorithms (Continues)]
+CSE373$[Review],[]
+@
