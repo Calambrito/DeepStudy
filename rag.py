@@ -30,9 +30,8 @@ Y hours: [Topic Name]
 Suggestions:
 ... and so on
 
-Assume the user has 3 hours of free time everyday. 
+Distribute the material covered in the week throughout 5 days adding upto no more than 3 hours of studying a day. 
 In the Suggestions add crucial insights that people commonly face when using that topic.
-Make sure to have some work for atleast 5 days a week.
 If you notice a quiz for a subject, make sure to add prep for that early on in the week.
 
 """
@@ -43,7 +42,7 @@ def get_embedding_function():
 def RAG(query: str, model: OllamaLLM):
     embedding_function = get_embedding_function()
     db = Chroma(persist_directory=CHROMA_PATH, embedding_function=embedding_function)
-    results = db.similarity_search_with_score(query, k=3)
+    results = db.similarity_search_with_score(query, k=1)
 
     context_text = "\n\n---\n\n".join([doc.page_content for doc, _score in results])
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)

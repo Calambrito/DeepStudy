@@ -37,7 +37,7 @@ def main():
             message_placeholder = st.empty()
             full_response = ""
             with st.spinner("Generating response..."):
-                model = OllamaLLM(model="llama3.2")
+                model = OllamaLLM(model="mistral-small:24b")
                 response_text = RAG(user_input, model)
             for token in response_text.split():
                 full_response += token + " "
