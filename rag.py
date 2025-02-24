@@ -14,7 +14,7 @@ Given Below is what courses I have for the mentioned weeks.
 
 {question}
 
-Generate plans following the given template.
+Generate study plans following the given template.
 
 Day 1:
 X hours: [Topic Name]
@@ -30,7 +30,7 @@ Y hours: [Topic Name]
 Suggestions:
 ... and so on
 
-Distribute the material covered in the week throughout 5 days adding upto no more than 3 hours of studying a day. 
+Distribute every single topic covered in the week throughout 5 days adding upto no more than 3.5 hours of studying a day. 
 In the Suggestions add crucial insights that people commonly face when using that topic.
 If you notice a quiz or midterm for a subject, make sure to add prep for that early on in the week.
 

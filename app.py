@@ -11,39 +11,39 @@ def main():
     if "toggle" not in st.session_state:
         st.session_state.toggle = False
 
-    col_header_left, col_header_right = st.columns([3, 1])
+    col_header_left, col_header_center, col_header_right = st.columns([3, 1, 1])
     with col_header_left:
         st.title("DeepStudy Chat")
+    with col_header_center:
+        if st.button("Clear Chat"):
+            st.session_state.messages = [{"role": "assistant", "content": "Let's start studying!"}]
+            st.rerun()
     with col_header_right:
         if st.button(f"DeepPlan {'ON' if st.session_state.toggle else 'OFF'}"):
             st.session_state.toggle = not st.session_state.toggle
             st.rerun()
 
     for msg in st.session_state.messages:
-        content = msg["content"].replace("\n", "\n\n")
-        if msg["role"] == "assistant":
-            with st.chat_message("assistant"):
-                st.markdown(content)
-        else:
-            with st.chat_message("user"):
-                st.markdown(content)
+        with st.chat_message(msg["role"]):
+            st.markdown(msg["content"], unsafe_allow_html=True)
 
-    user_input = st.chat_input("What instructions do you want for studying?")
+    user_input = st.chat_input("Start planning!")
     if user_input:
         st.session_state.messages.append({"role": "user", "content": user_input})
         with st.chat_message("user"):
-            st.markdown(user_input.replace("\n", "\n\n"))
+            st.markdown(user_input, unsafe_allow_html=True)
         with st.chat_message("assistant"):
             message_placeholder = st.empty()
             full_response = ""
             with st.spinner("Generating response..."):
                 model = OllamaLLM(model="qwen2.5:14b")
                 response_text = RAG(user_input, model)
-            for token in response_text.split():
-                full_response += token + " "
-                time.sleep(0.05)
-                message_placeholder.markdown(full_response.replace("\n", "\n\n") + "▌")
-            message_placeholder.markdown(full_response.replace("\n", "\n\n"))
+            tokens = re.split(r'(\s+)', response_text)
+            for token in tokens:
+                full_response += token
+                time.sleep(0.03)
+                message_placeholder.markdown(full_response + "▌", unsafe_allow_html=True)
+            message_placeholder.markdown(full_response, unsafe_allow_html=True)
             st.session_state.messages.append({"role": "assistant", "content": full_response})
 
 if __name__ == "__main__":

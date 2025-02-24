@@ -3,3 +3,4 @@ langchain_community
 langchain_chroma
 pypdf
 streamlit
+pysqlite3-binary>=0.4.7
