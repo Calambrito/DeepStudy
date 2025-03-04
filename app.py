@@ -2,6 +2,7 @@ import time
 import re
 import streamlit as st
 from langchain_ollama import OllamaLLM
+from promptgen import get_final_prompt
 from rag import RAG
 
 def main():
@@ -37,7 +38,8 @@ def main():
             full_response = ""
             with st.spinner("Generating response..."):
                 model = OllamaLLM(model="qwen2.5:14b")
-                response_text = RAG(user_input, model)
+                final_prompt = get_final_prompt(user_input)
+                response_text = RAG(final_prompt, model)
             tokens = re.split(r'(\s+)', response_text)
             for token in tokens:
                 full_response += token
