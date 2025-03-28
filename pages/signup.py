@@ -19,6 +19,8 @@ def verify_signup(username, password, courses):
     if row == None:
         st.session_state['username'] = username
         cursor.execute(f"INSERT INTO USERS VALUES('{username}', '{password}')")
+        for course in courses:
+            cursor.execute(f"INSERT INTO USERCOURSES VALUES('{username}', '{course}')")
         conn.commit()
         return True
     
