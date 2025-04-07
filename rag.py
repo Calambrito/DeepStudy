@@ -2,10 +2,12 @@ from langchain_chroma import Chroma
 from langchain.prompts import ChatPromptTemplate
 from langchain_ollama import OllamaLLM
 from langchain_ollama import OllamaEmbeddings
+from google import genai
 
 CHROMA_PATH = "chroma"
 
 PROMPT_TEMPLATE = """
+YOU ARE AN AI HELPER THAT GENERATES STUDY PLANS FOR A STUDENT AT NORTH SOUTH UNIVERSITY
 Given Below is what courses I have for the mentioned weeks.
 
 {context}
@@ -41,6 +43,7 @@ def get_embedding_function():
     return OllamaEmbeddings(model="nomic-embed-text")
 
 def RAG(query: str, model: OllamaLLM):
+    client = genai.Client(api_key="AIzaSyBEB71cgZuF1LnTdFKjQjME_TRvGqbIHmk")
     embedding_function = get_embedding_function()
     db = Chroma(persist_directory=CHROMA_PATH, embedding_function=embedding_function)
     results = db.similarity_search_with_score(query, k=4)
@@ -50,7 +53,7 @@ def RAG(query: str, model: OllamaLLM):
     prompt = prompt_template.format(context=context_text, question=query)
 
     print(prompt + "\n\n")
-    response_text = model.invoke(prompt)
+    response_text = client.models.generate_content(model = "gemini-2.0-flash", contents = prompt)
     print("\n\n=== FINAL RESPONSE ===")
     print(response_text)
     
