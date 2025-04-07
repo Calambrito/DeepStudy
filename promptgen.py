@@ -1,5 +1,6 @@
 from langchain_ollama import OllamaLLM
 import re
+from google import genai
 
 # Define the conversion instructions as the context.
 CONVERSION_CONTEXT = """
@@ -41,14 +42,11 @@ prompt_template = "{context}\nUser Request: {question}\n"
 
 def get_final_prompt(query: str) -> str:
     prompt = prompt_template.format(context=CONVERSION_CONTEXT, question=query.strip())
-    model = OllamaLLM(model="deepseek-r1:1.5b")
+    client = genai.Client(api_key="AIzaSyBEB71cgZuF1LnTdFKjQjME_TRvGqbIHmk")
 
-    response = model.invoke(prompt)
-    return remove_think_tags(response.strip())
+    response_text = client.models.generate_content(model = "gemini-2.0-flash", contents = prompt)
+    return response_text.text
 
-def remove_think_tags(text):
-    cleaned_text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL)
-    return cleaned_text.strip()
 
 if __name__ == "__main__":
     user_query = "hi"

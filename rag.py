@@ -34,9 +34,10 @@ Generate study plans following the given template.
 
 Distribute every single topic covered in the week throughout 5 days adding upto no more than 3.5 hours of studying a day. 
 In the Suggestions add crucial insights that people commonly face when using that topic.
-If you notice a quiz or midterm for a subject, make sure to add prep for that early on in the week.
+If you notice a quiz or midterm for a subject, make sure to add prep for that early on in the week or in the week prior.
 Do not make any references to the prompt in your response.
-Start with "heres a study plan" or something nice and witty
+Start with "heres a study plan" or something nice and witty.
+Breaks are to be managed by the user do not include breaks or relaxation in the plan.
 """
 
 def get_embedding_function():

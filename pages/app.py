@@ -4,6 +4,7 @@ import streamlit as st
 from langchain_ollama import OllamaLLM
 from promptgen import get_final_prompt
 from rag import RAG
+import ast
 
 def main():
     st.set_page_config(page_title="DeepStudy Chat", page_icon="🤖", layout="centered")
@@ -40,7 +41,8 @@ def main():
                 model = OllamaLLM(model="llama3.2")
                 final_prompt = get_final_prompt(user_input)
                 response_text = RAG(final_prompt, model)
-            tokens = re.split(r'(\s+)', response_text)
+
+            tokens = re.split(r'(\s+)', response_text.text)
             for token in tokens:
                 full_response += token
                 time.sleep(0.03)
