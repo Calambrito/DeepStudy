@@ -1,17 +1,34 @@
 import streamlit as st
-from st_login_form import login_form
+import sqlite3
 
-client = login_form(allow_guest=False)
+conn = sqlite3.connect("users.db")
+cursor = conn.cursor()
 
-attempted = False
+def verify_login(username, password):
+    cursor.execute(f"SELECT * FROM USERS WHERE username = '{username}'")
+    row = cursor.fetchone()
 
-if st.session_state["authenticated"]:
-    if st.session_state["username"]:
-        st.success(f"Welcome {st.session_state['username']}")
-        st.switch_page("./pages/app.py")
-    else:
-        st.success("Welcome guest")
-else:
-    if attempted:
-        st.error("Incorrect username or password")
+    # st.write(row)
+    if row == None:
+        st.error("User does not exist")
+        return False
 
+    if password == row[1]:
+        st.session_state['username'] = username
+        return True
+    st.error("Incorrect username or password.")
+    return False
+
+st.write("")
+with st.form(key = "Login"):
+    username = st.text_input("Enter your username: ")
+    password = st.text_input("Enter your password: ", type="password")
+    login_button = st.form_submit_button("Login")
+
+st.page_link("pages/signup.py",label="Sign Up")
+
+if login_button:
+    if verify_login(username, password):
+        st.switch_page("pages/app.py")
+
+conn.close()

@@ -37,7 +37,7 @@ def main():
             message_placeholder = st.empty()
             full_response = ""
             with st.spinner("Generating response..."):
-                model = OllamaLLM(model="qwen2.5:14b")
+                model = OllamaLLM(model="llama3.2")
                 final_prompt = get_final_prompt(user_input)
                 response_text = RAG(final_prompt, model)
             tokens = re.split(r'(\s+)', response_text)

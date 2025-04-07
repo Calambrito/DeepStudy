@@ -41,7 +41,7 @@ prompt_template = "{context}\nUser Request: {question}\n"
 
 def get_final_prompt(query: str) -> str:
     prompt = prompt_template.format(context=CONVERSION_CONTEXT, question=query.strip())
-    model = OllamaLLM(model="deepseek-r1:14b")
+    model = OllamaLLM(model="deepseek-r1:1.5b")
 
     response = model.invoke(prompt)
     return remove_think_tags(response.strip())

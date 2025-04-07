@@ -1,4 +1,8 @@
 from PyPDF2 import PdfWriter
+import sqlite3
+
+conn = sqlite3.connect("users.db")
+cursor = conn.cursor()
 
 def parse_schedule(schedule_file):
     with open(schedule_file, 'r', encoding='utf-8') as file:
@@ -48,6 +52,12 @@ def build_pdf(schedule, output_file):
         pdf.cell(200, 8, "@", ln=True, align='L')
         pdf.ln(3)
     pdf.output(output_file)
+
+def get_user_courses(username):
+    cursor.execute(f"SELECT course from USERCOURSES WHERE username='{username}'")
+    courses = cursor.fetchall()
+    # print(courses)
+    return courses
 
 if __name__ == "__main__":
     schedule = parse_schedule("rawdata/schedule.txt")
