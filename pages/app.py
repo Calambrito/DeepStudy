@@ -7,6 +7,10 @@ from rag import RAG
 import ast
 
 def main():
+    if 'username' not in st.session_state:
+        st.error("Not logged in.")
+        return 
+
     st.set_page_config(page_title="DeepStudy Chat", page_icon="🤖", layout="centered")
     if "messages" not in st.session_state:
         st.session_state.messages = [{"role": "assistant", "content": "Let's start studying!"}]
