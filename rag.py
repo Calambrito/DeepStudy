@@ -3,6 +3,7 @@ from langchain.prompts import ChatPromptTemplate
 from langchain_ollama import OllamaLLM
 from langchain_ollama import OllamaEmbeddings
 from google import genai
+from key import get_api_key
 
 CHROMA_PATH = "chroma"
 
@@ -56,8 +57,9 @@ Ignore the weekly topics and provide a concise but natural answer.
 
 Otherwise generate study plans using the weekly topics provided above.
 If the user has specified course codes in the query then provide a plan ONLY FOR THAT COURSE.
-Distribute every topic covered in the week throughout 5 days adding upto no more than 3.5 hours of studying a day. 
-Add short and useful suggestions at the end for crucial topics.
+Distribute every topic covered in the week throughout 5 days adding upto no more than 4 hours of studying a day. 
+Add short and useful suggestions at the end of each topic.
+Dont any topic less than 45 minutes.
 Do not make any references to the prompt in your response.
 Start with "heres a study plan" or something nice and witty.
 Breaks are to be managed by the user do not include breaks or relaxation in the plan.
@@ -67,7 +69,8 @@ def get_embedding_function():
     return OllamaEmbeddings(model="nomic-embed-text")
 
 def RAG(query: str, model: OllamaLLM):
-    client = genai.Client(api_key="AIzaSyBjpv5XG3d5kAleARRObvEcMiE9RA4cCW0")
+    key = get_api_key()
+    client = genai.Client(api_key=key)
     embedding_function = get_embedding_function()
     db = Chroma(persist_directory=CHROMA_PATH, embedding_function=embedding_function)
     results = db.similarity_search_with_score(query, k=14)

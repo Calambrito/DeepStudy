@@ -33,7 +33,7 @@ with st.form(key = "Login"):
     password = st.text_input("Enter your password: ", type="password")
     courses = st.multiselect(
         "What courses would you like to add to your planner?",
-        ["CSE115", "CSE173", "CSE215", "CSE225"],
+        ["CSE115", "CSE173", "CSE215", "CSE225", "CSE231", "CSE325", "CSE331", "CSE332", "CSE373"],
     )
     login_button = st.form_submit_button("Sign Up")
 

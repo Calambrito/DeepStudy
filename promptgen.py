@@ -1,6 +1,7 @@
 from langchain_ollama import OllamaLLM
 import re
 from google import genai
+from key import get_api_key
 
 # # Define the conversion instructions as the context.
 # CONVERSION_CONTEXT = """
@@ -63,8 +64,9 @@ Every week number must be stated explicitly. DO NOT USE RANGES.
 prompt_template = "{context}\nUser Request: {question}\n"
 
 def get_final_prompt(query: str) -> str:
+    key = get_api_key()
     prompt = prompt_template.format(context=CONVERSION_CONTEXT, question=query.strip())
-    client = genai.Client(api_key="AIzaSyBjpv5XG3d5kAleARRObvEcMiE9RA4cCW0")
+    client = genai.Client(api_key = key)
 
     response_text = client.models.generate_content(model = "gemini-2.0-flash", contents = prompt)
     return response_text.text
