@@ -4,3 +4,6 @@ langchain_chroma
 pypdf
 fpdf
 streamlit
+google-generativeai
+python-docx
+PyPDF2
