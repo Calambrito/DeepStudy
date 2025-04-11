@@ -1,7 +1,7 @@
 from langchain_ollama import OllamaLLM
 import re
 from google import genai
-from key import get_api_key
+from pages.key import get_api_key
 
 # # Define the conversion instructions as the context.
 # CONVERSION_CONTEXT = """

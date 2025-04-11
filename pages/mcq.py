@@ -1,9 +1,10 @@
 import streamlit as st
-import google.generativeai as genai
+from google import genai
 import io
 import json
 import PyPDF2
 from docx import Document
+from pages.key import get_api_key
 
 # page conf
 if 'username' not in st.session_state:
@@ -12,8 +13,8 @@ if 'username' not in st.session_state:
 
 st.set_page_config(page_title="DeepStudy Quiz", page_icon="📚", layout="centered")
 
-genai.configure(api_key="XD")
-model = genai.GenerativeModel('gemini-2.0-flash')
+key = get_api_key
+client = genai.Client(api_key=key)
 
 # helper functions
 def parse_file(uploaded_file):
@@ -81,7 +82,7 @@ def generate_mcqs(text_content, num_questions=10):
 
     try:
         with st.spinner(f"Generating {num_questions} MCQs..."):
-            response = model.generate_content(prompt)
+            response = client.models.generate_content(model = "gemini-2.0-flash", contents = prompt)
             # Debug: Print raw response text
             # st.text_area("Raw Gemini Response:", response.text, height=150)
 
