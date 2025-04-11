@@ -70,12 +70,12 @@ Breaks are to be managed by the user do not include breaks or relaxation in the 
 def get_embedding_function():
     return OllamaEmbeddings(model="nomic-embed-text")
 
-def RAG(query: str, model: OllamaLLM):
+def RAG(query: str, model: OllamaLLM, topk : int):
     key = get_api_key()
     client = genai.Client(api_key=key)
     embedding_function = get_embedding_function()
     db = Chroma(persist_directory=CHROMA_PATH, embedding_function=embedding_function)
-    results = db.similarity_search_with_score(query, k=14)
+    results = db.similarity_search_with_score(query, k = topk)
 
     context_text = "\n\n---\n\n".join([doc.page_content for doc, _score in results])
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
