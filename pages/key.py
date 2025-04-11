@@ -1,3 +1,3 @@
 def get_api_key():
-    key = "xd"
+    key = "XD"
     return key

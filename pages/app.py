@@ -43,7 +43,8 @@ if user_input:
         with st.spinner("Generating response..."):
             model = OllamaLLM(model="llama3.2")
             final_prompt = get_final_prompt(user_input)
-            response_text = RAG(final_prompt, model)
+            exam_req = "midterm" in user_input or "final" in user_input or "exam" in user_input
+            response_text = RAG(final_prompt, model, 3 + 4 * exam_req)
 
         tokens = re.split(r'(\s+)', response_text.text)
         for token in tokens:
