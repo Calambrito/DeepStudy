@@ -13,7 +13,7 @@ if 'username' not in st.session_state:
 
 st.set_page_config(page_title="DeepStudy Quiz", page_icon="📚", layout="centered")
 
-key = get_api_key
+key = get_api_key()
 client = genai.Client(api_key=key)
 
 # helper functions
@@ -55,6 +55,7 @@ def generate_mcqs(text_content, num_questions=10):
     prompt = f"""
     Based on the following text, generate exactly {num_questions} multiple-choice questions (MCQs).
     Each question should have 4 options (labeled A, B, C, D).
+    The answers must be relevant to EDUCATIONAL MATERIAL dont ask for obsecure things like page numbers faculty names or email addresses.
     Indicate the correct answer clearly for each question.
     Format the output as a JSON list, where each item is an object with keys: "question", "options" (a list of 4 strings), and "correct_answer" (the string label, e.g., "A", "B", "C", or "D").
 
