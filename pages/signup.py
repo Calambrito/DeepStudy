@@ -71,6 +71,6 @@ st.page_link("login.py",label="Log In")
 
 if login_button:
     if verify_signup(username, password, courses):
-        st.switch_page("pages/app.py")
+        st.switch_page("login.py")
         
 conn.close()
