@@ -1,5 +1,3 @@
-from langchain_ollama import OllamaLLM
-import re
 from google import genai
 from pages.key import get_api_key
 
@@ -48,14 +46,14 @@ DO NOT CHANGE the prompt. Simply output whatever was given as input.
 Otherwise use the following guide to convert the users query:
 
 Firstly list all the course codes mentioned in the users query in the following format:
-  -** Here are all the courses I need to plan for: [course code 1], [course code 2], [course code 3]...**
+  - Here are all the courses I need to plan for: [course code 1], [course code 2], [course code 3]...
 
 Then list all weeks for which a plan is required based on the users input:
-  - **A plan for the midterm exam** → Output exactly "give me a plan for Week 1 , Week 2 , Week 3 , Week 4 , Week 5 , Week 6 , Week 7 , Week 8 "
-  - **A plan for the final exam** → Output exactly "give me a plan for Week 8, Week 9, Week 10, Week 11, Week 12, Week 13, Week 14"
-  - **A plan for the n-th week** → Output exactly "give me a study plan for Week n".
-  - **A plan for the n-th month** → Output exactly "give me a study plan for Week X, Week Y, Week Z, Week W" where the weeks correspond to the nth month (Month 1 → Weeks 1-4, Month 2 → Weeks 5-8, and so on).
-  - **A plan for the n-th week within an i-th month** → Compute the week number using the formula `(i - 1) * 4 + n` and output "give me a study plan for Week W".
+  - **A plan for the n-th week** → Output exactly "Plan for Week n".
+  - **A plan for the midterm exam** → Output exactly "Plan for Week 1 , Week 2 , Week 3 , Week 4 , Week 5 , Week 6 , Week 7 , Week 8 "
+  - **A plan for the final exam** → Output exactly "Plan for Week 8, Week 9, Week 10, Week 11, Week 12, Week 13, Week 14"
+  - **A plan for the n-th month** → Output exactly "Plan for Week X, Week Y, Week Z, Week W" where the weeks correspond to the nth month (Month 1 → Weeks 1-4, Month 2 → Weeks 5-8, and so on).
+  - **A plan for the n-th week within an i-th month** → Compute the week number using the formula `(i - 1) * 4 + n` and output "Plan for Week W".
 
 Every week number must be stated explicitly and must be chronological. DO NOT USE RANGES.
 """

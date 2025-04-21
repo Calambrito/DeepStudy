@@ -52,13 +52,13 @@ Weekly Topics:
 User Query:
 {question}
 
-If the user has a general query, sharing some thoughts or is asking for tips DO NOT provide a study plan. 
+If the user has a general query, is sharing some thoughts or is asking for tips DO NOT provide a study plan. 
 Ignore the weekly topics and provide a concise but natural answer.
 
 Otherwise generate study plans using the weekly topics provided above.
 
 FOLLOW THE INSTRUCTIONS BELOW.
-If the user has specified course codes in the query then provide a plan ONLY FOR THAT COURSE.
+If the user has specified course codes in the query then provide a plan ONLY FOR THOSE COURSES.
 Distribute every topic covered in the week throughout 5 days adding upto atleast 3.5 no more than 4.25 hours of studying a day with a maximum of 3 sessions a week. 
 The weeks must be mentioned in chronological order.
 Add short and useful suggestions at the end of each topic.
