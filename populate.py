@@ -10,7 +10,7 @@ from langchain_chroma import Chroma
 CHROMA_PATH = "chroma"
 DATA_PATH = "data"
 
-def main():
+def populate_db():
     print("Deleting Old Database...")
     clear_database()
     print("Loading Documents...")
@@ -72,4 +72,4 @@ def clear_database():
         shutil.rmtree(CHROMA_PATH)
 
 if __name__ == "__main__":
-    main()
+    populate_db()
