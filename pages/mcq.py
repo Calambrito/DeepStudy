@@ -191,8 +191,9 @@ if 'results' not in st.session_state:
     st.session_state.results = []
 
 
-# upload files
+# upload files and choose question count
 uploaded_file = st.file_uploader("Choose a file (TXT, PDF, DOCX)", type=["txt", "pdf", "docx"])
+num_questions = st.number_input("Number of questions: ", 5, 25)
 
 if uploaded_file is not None:
     # process one file or new files only
@@ -209,15 +210,10 @@ if uploaded_file is not None:
         with st.spinner("Parsing file..."):
             st.session_state.text_content = parse_file(uploaded_file)
 
-        if st.session_state.text_content:
-            st.success(f"Successfully parsed '{uploaded_file.name}'!")
-        else:
-            st.error("Could not parse text from the file.")
-
 # generate mcqs
 if st.session_state.text_content and not st.session_state.mcqs:
     if st.button("Generate MCQs"):
-        st.session_state.mcqs = generate_mcqs(st.session_state.text_content, num_questions=10)
+        st.session_state.mcqs = generate_mcqs(st.session_state.text_content, num_questions)
         if st.session_state.mcqs:
             st.success("MCQs generated successfully!")
             st.session_state.test_submitted = False # Reset submission status
